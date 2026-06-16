@@ -13,7 +13,7 @@ public abstract class Animal {
             this.name = name;
         }
 
-        if(age < 0) {
+        if (age < 0) {
             this.age = 0;
         } else {
             this.age = age;
@@ -36,12 +36,26 @@ public abstract class Animal {
         return health;
     }
 
-    public  int getAge() {
+    public int getAge() {
         return age;
     }
 
     // TODO: Implement the logic for this method with TDD approach
-    //public String getHealthStatus() { return "";}
+    //
 
     public abstract void makeSound();
+
+    public String getHealthStatus() {
+        int health = getHealth();
+
+        if (health >= 80) {
+            return "Healthy and Happy";
+        } else if (health >= 50) {
+            return "A bit tired";
+        } else {
+            return "Sick or exhausted";
+        }
+    }
 }
+
+
